@@ -20,15 +20,17 @@ async function getContactById(contactId) {
   return contactById;
 }
 
-async function addContact(name, email, phone) {
-  const newContact = { id: v4(), ...name, ...email, ...phone };
-  // console.log(newContact, "newContact");
+async function addContact(data) {
+  // const data = await fs.readFile(contactsPath, "utf-8");
+  // const contacts = JSON.parse(data).concat(newContact);
+  const newContact = { id: v4(), ...data };
   const contacts = await listContacts();
-  // console.log("contacts before", contacts);
   contacts.push(newContact);
-  // console.log(contacts, "contacts after");
-  await updateContacts(contacts);
-  // await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2)); //rewrite
+  // const data = JSON.stringify(contacts);
+  // console.log("data", data);
+
+  // await updateContacts(contacts);
+  await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2), "utf-8"); //rewrite
   return newContact;
 }
 

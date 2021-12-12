@@ -1,9 +1,15 @@
 // const fs = require("fs/promises");
 // const path = require("path");
+// const yargs = require("yargs");
+// const { hideBin } = require("yargs/helpers");
+
+// const arr = hideBin(process.argv);
+// const { argv } = yargs(arr);
+// console.log(argv);
 
 const contactsOperations = require("./contacts");
-
 async function invokeAction({ action, id, name, email, phone }) {
+  console.log(name, "name");
   switch (action) {
     case "list":
       const list = await contactsOperations.listContacts();
@@ -21,7 +27,7 @@ async function invokeAction({ action, id, name, email, phone }) {
         email,
         phone,
       });
-      console.log(newContact, "from invoke");
+      // console.log(newContact, "from invoke");
       break;
 
     case "updateById":
@@ -44,12 +50,8 @@ async function invokeAction({ action, id, name, email, phone }) {
   }
 }
 
+console.log(process.argv);
 const id = "10";
-const newContact = {
-  name: "Bob Dylan",
-  email: "bob@gmail.com",
-  phone: "(692) 876-2979",
-};
 
 const upDateContact = {
   name: "Agata Dylan",
@@ -60,10 +62,17 @@ const updateId = 6;
 
 // invokeAction({ action: "list" });
 // invokeAction({ action: "get", id: "3" });
-invokeAction({
-  action: "add",
-  ...newContact,
-});
+
+const newContact = {
+  name: "Anna Dylan",
+  email: "anna@gmail.com",
+  phone: "(692) 876-2979",
+};
+
+// invokeAction({
+//   action: "add",
+//   ...newContact,
+// });
 
 // invokeAction({
 //   action: "updateById",
