@@ -58,38 +58,4 @@ async function invokeAction({ action, id, name, email, phone }) {
   }
 }
 
-const id = "10";
-
-// console.log(argv);
 invokeAction(argv);
-// invokeAction({ action: "list" });
-// invokeAction({ action: "get", id: "3" });
-
-const newContact = {
-  name: "Anna Dylan",
-  email: "anna@gmail.com",
-  phone: "(692) 876-2979",
-};
-
-// invokeAction({
-//   action: "add",
-//   ...newContact,
-// });
-
-const updateContact = {
-  name: "Agata Dylan",
-  email: "agata@gmail.com",
-  phone: "(785) 234-9098",
-};
-
-const updateId = "5";
-// invokeAction({
-//   action: "updateById",
-//   ...updateContact,
-//   id: updateId,
-// });
-
-// invokeAction({
-//   action: "remove",
-//   id: updateId,
-// });
