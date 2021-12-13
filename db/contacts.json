@@ -12,12 +12,6 @@
     "phone": "(294) 840-6685"
   },
   {
-    "id": "3",
-    "name": "Kennedy Lane",
-    "email": "mattis.Cras@nonenimMauris.net",
-    "phone": "(542) 451-7038"
-  },
-  {
     "id": "4",
     "name": "Wylie Pope",
     "email": "est@utquamvel.net",
@@ -60,33 +54,9 @@
     "phone": "(748) 206-2688"
   },
   {
-    "id": "4ad12649-24d9-4990-bc4c-449fb1de96f8",
-    "name": "Anna Dylan",
-    "email": "anna@gmail.com",
-    "phone": "(692) 876-2979"
-  },
-  {
-    "id": "f43d4088-ed45-4f12-928a-cf629fc0088d",
-    "name": "Anna Dylan",
-    "email": "anna@gmail.com",
-    "phone": "(692) 876-2979"
-  },
-  {
-    "id": "f884c914-e7cb-43a0-9a8c-f21f8c7d4ff0",
-    "name": "Anna Dylan",
-    "email": "anna@gmail.com",
-    "phone": "(692) 876-2979"
-  },
-  {
-    "id": "bc88792a-1555-40d2-9bd7-3f1d770f15cc",
-    "name": "Anna Dylan",
-    "email": "anna@gmail.com",
-    "phone": "(692) 876-2979"
-  },
-  {
-    "id": "608281de-0c64-48e7-b7ae-fb378e5007a0",
-    "name": "Anna Dylan",
-    "email": "anna@gmail.com",
-    "phone": "(692) 876-2979"
+    "id": "a5b9674e-3522-4545-8fe2-abbbb277e5f3",
+    "name": "Mango",
+    "email": "mango@gmail.com",
+    "phone": "322-22-22"
   }
 ]

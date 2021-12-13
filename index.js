@@ -1,24 +1,32 @@
-// const fs = require("fs/promises");
-// const path = require("path");
 // const yargs = require("yargs");
 // const { hideBin } = require("yargs/helpers");
-
+// const { require } = require("yargs")
 // const arr = hideBin(process.argv);
 // const { argv } = yargs(arr);
-// console.log(argv);
+const { Command } = require("commander");
+const program = new Command();
+
+program
+  .option("-a, --action <type>", "choose action")
+  .option("-i, --id <type>", "user id")
+  .option("-n, --name <type>", "user name")
+  .option("-e, --email <type>", "user email")
+  .option("-p, --phone <type>", "user phone");
+
+program.parse(process.argv);
+const argv = program.opts();
 
 const contactsOperations = require("./contacts");
 async function invokeAction({ action, id, name, email, phone }) {
-  console.log(name, "name");
   switch (action) {
     case "list":
       const list = await contactsOperations.listContacts();
-      console.log(list);
+      console.table(list);
       break;
 
     case "get":
       const contact = await contactsOperations.getContactById(id);
-      console.log(contact);
+      console.table(contact);
       break;
 
     case "add":
@@ -27,7 +35,7 @@ async function invokeAction({ action, id, name, email, phone }) {
         email,
         phone,
       });
-      // console.log(newContact, "from invoke");
+      console.table(newContact);
       break;
 
     case "updateById":
@@ -37,12 +45,12 @@ async function invokeAction({ action, id, name, email, phone }) {
         email,
         phone,
       });
-      console.log(contactForUpdate);
+      console.table(contactForUpdate);
       break;
 
     case "remove":
       const removingContact = await contactsOperations.removeContact(id);
-      console.log(removingContact);
+      console.table(removingContact);
       break;
 
     default:
@@ -50,16 +58,10 @@ async function invokeAction({ action, id, name, email, phone }) {
   }
 }
 
-console.log(process.argv);
 const id = "10";
 
-const upDateContact = {
-  name: "Agata Dylan",
-  email: "agata@gmail.com",
-  phone: "(785) 234-9098",
-};
-const updateId = 6;
-
+// console.log(argv);
+invokeAction(argv);
 // invokeAction({ action: "list" });
 // invokeAction({ action: "get", id: "3" });
 
@@ -74,9 +76,16 @@ const newContact = {
 //   ...newContact,
 // });
 
+const updateContact = {
+  name: "Agata Dylan",
+  email: "agata@gmail.com",
+  phone: "(785) 234-9098",
+};
+
+const updateId = "5";
 // invokeAction({
 //   action: "updateById",
-//   ...upDateContact,
+//   ...updateContact,
 //   id: updateId,
 // });
 
